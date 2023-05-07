@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {Col, Container, Form, Row, Button} from 'react-bootstrap';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import "./Signup.css";
 
 
 const Login = () => {
@@ -12,7 +13,7 @@ const Login = () => {
   return (
    <Container>
     <Row>
-        <Col md={6} className='login_form_container'>
+        <Col md={6} className='login__form--container'>
             <Form style ={{width: "100%"}}>
                 <h1>Login to your account</h1>
                 <Form.Group>
@@ -30,7 +31,7 @@ const Login = () => {
                 </p>
             </Form>
         </Col>
-        <Col md={6} className='login_image_container'></Col>
+        <Col md={6} className='login__image--container'></Col>
 
     </Row>
    </Container>
