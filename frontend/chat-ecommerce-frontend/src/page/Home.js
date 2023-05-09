@@ -2,8 +2,8 @@ import React from 'react';
 import {Row,Col} from 'react-bootstrap';
 import { LinkContainer } from "react-router-bootstrap";
 import {Link} from "react-router-dom";
-import categories from '../../categories';
-import "../page/Home.css"
+import categories from '../categories';
+import "./Home.css"
 
 const Home = () => {
   return (

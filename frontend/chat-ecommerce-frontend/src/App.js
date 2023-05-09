@@ -2,9 +2,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Home from './components/page/Home';
-import Login from './components/page/Login';
-import Signup from './components/page/Signup';
+import Home from './page/Home';
+import Login from './page/Login';
+import Signup from './page/Signup';
 
 
 function App() {
