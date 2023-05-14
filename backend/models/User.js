@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const UserSchema =  Schema({
+const UserSchema =  mongoose.Schema({
     name:{
         type:String,
         required: [true,'is required']
@@ -42,7 +42,7 @@ const UserSchema =  Schema({
         type:Array,
         default:[]
     },
-    orders:[{type:Schema.Types.ObjectId, ref:'Order'}]
+    orders:[{type: mongoose.Schema.Types.ObjectId, ref:'Order'}]
 
 }, {minimize: false});
 
@@ -84,6 +84,9 @@ UserSchema.pre('save', function(next) {
     })
 })
 
+UserSchema.pre('remove' , function(next){
+    this.model('Order').remove({owner: this._id, next});
+})
 
 
 

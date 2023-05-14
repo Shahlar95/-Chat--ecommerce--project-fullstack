@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../,odels/User');
+const User = require('../models/User');
 
 
 //signup
