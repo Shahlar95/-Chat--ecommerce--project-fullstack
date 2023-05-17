@@ -23,3 +23,16 @@ const persistConfig = {
     blackList: [appApi.reducerPath, "products"],
 };
 
+///persist our store 
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
+//creating the store
+
+const store = configureStore({
+    reducer: persistedReducer,
+    middleware: [thunk, appApi.middleware],
+});
+
+
+export default  store 
