@@ -1,20 +1,23 @@
 import React,{useState} from 'react';
 import {Col, Container, Form, Row, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import { useLoginMutation } from "../services/appApi";
 import "./Signup.css";
 
 
 const Login = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    function handleSubmit(){
-
+    const [login, { isError, isLoading, error }] = useLoginMutation();
+    function handleLogin(e){
+        e.preventDefault();
+        login({ email, password });
     }
   return (
    <Container>
     <Row>
         <Col md={6} className='login__form--container'>
-            <Form style ={{width: "100%"}}>
+            <Form style ={{width: "100%"}}  onSubmit={handleLogin}>
                 <h1>Login to your account</h1>
                 <Form.Group>
                     <Form.Label>Email Address</Form.Label>

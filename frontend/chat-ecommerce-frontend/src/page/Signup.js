@@ -39,7 +39,7 @@ const Signup = () => {
                 <Form.Group>
                     <Button type='submit' disabled={isLoading}
                     
-                    >Login</Button>
+                    >Create Account</Button>
                 </Form.Group>
                 <p>Don't haven an account? <Link to='/login'>Login</Link>{''}
                 </p>

@@ -9,7 +9,7 @@ import persistStore from 'redux-persist/es/persistStore';
 
 
 //store to persit
-const persistedStore = persisStore(store);
+const persistedStore = persistStore(store);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
