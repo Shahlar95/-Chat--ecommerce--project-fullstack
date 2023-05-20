@@ -1,12 +1,18 @@
 import React from 'react';
 import {Navbar, Button, Nav,NavDropdown, Container} from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import './Navigation.css';
+import { logout } from '../features/userSlice';
 
 
 const Navigation = () => {
-  const user = useSelector((state) =>state.user)
+  const user = useSelector((state) =>state.user);
+  const dispath = useDispatch();
+
+  function handleLogout(){
+    dispath(logout());
+  }
 
   return (
 
@@ -37,7 +43,7 @@ const Navigation = () => {
                   </LinkContainer>
                   </>
                 )}
-              {user.isAdmin && (
+              {!user.isAdmin && (
                 <>
                 <LinkContainer to="/cart">
                 <NavDropdown.Item >Cart</NavDropdown.Item>
@@ -48,7 +54,7 @@ const Navigation = () => {
                 </>
               )}
               <NavDropdown.Divider />
-              <Button>Logout</Button>
+              <Button variant= "danger" onClick={handleLogout} className="logout-btn">Logout</Button>
             </NavDropdown>
             )}
           </Nav>
