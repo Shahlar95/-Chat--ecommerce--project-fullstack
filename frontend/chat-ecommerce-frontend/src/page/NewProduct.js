@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./NewProduct.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import { useCreateProductMutation } from '../services/appApi';
 import {Col, Container, Form, Row, Button, Alert} from 'react-bootstrap';
 
@@ -14,6 +14,10 @@ const NewProduct = () => {
   const [imgToRemove, setImgToRemove] = useState(null)
   const navigate = useNavigate();
   const [createProduct, {isError, error, isLoading, isSuccess}] = useCreateProductMutation();
+
+  function showWidget(){
+    
+  }
 
   return (
       <Container>
@@ -47,11 +51,22 @@ const NewProduct = () => {
                       <option value = "laptops"> laptops </option>
                     </Form.Select>
                 </Form.Group>
-                <Form.Group>
-                    <Button type='submit' disabled={isLoading}>Login</Button>
+                <Form.Group className='mb-3'>
+                   <Button type='button'  onClick={showWidget}>Upload Images</Button>
+                   <div className='images-preview-container'>
+                        {images.map((image)=>(
+                          <div className='image-preview'>
+                            <img src={image.url}/>
+                              {/* add icon for removing */}
+                          </div>
+
+                        ))}
+                   </div>
                 </Form.Group>
-                <p>Don't haven an account? <Link to='/signup'>Create account</Link>{''}
-                </p>
+                <Form.Group>
+                    <Button type='submit' disabled={isLoading || isSuccess}>Create Product</Button>
+                </Form.Group>
+               
             </Form>
           </Col>
           <Col md={6} className='new-product__image--container'></Col>
