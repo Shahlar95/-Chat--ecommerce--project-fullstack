@@ -3,6 +3,8 @@ import "./NewProduct.css";
 import { useNavigate, Link} from 'react-router-dom';
 import { useCreateProductMutation } from '../services/appApi';
 import {Col, Container, Form, Row, Button, Alert} from 'react-bootstrap';
+import axios from '../axios';
+
 
 
 const NewProduct = () => {
@@ -15,8 +17,28 @@ const NewProduct = () => {
   const navigate = useNavigate();
   const [createProduct, {isError, error, isLoading, isSuccess}] = useCreateProductMutation();
 
+  function handleRemoveImg(imgObj){
+    setImgToRemove(imgObj.public_id);
+    axios.delete(`/images/${imgObj.public_id}`)
+    .then((res)=> {
+      setImgToRemove(null);
+      setImages((prev) => prev.filter((img)=>img.public_id !== imjObj.public_id))
+    }).catch((e) =>console.log(e));
+  }
+
   function showWidget(){
-    
+    const widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName:"Shahlar Abbasov",
+        uploadPreset:"sefrvu4x",
+      },
+      (error,result) =>{
+        if(!error && result.event === "success"){
+          setImages((prev)=>[...prev, {url: result.info.url, public_id: result.info.public_id}]);
+        }
+      } 
+    )
+    widget.open();
   }
 
   return (
@@ -36,10 +58,10 @@ const NewProduct = () => {
                     <Form.Control as='textarea' placeholder='Enter product description' style={{height:"100px"}} value={description}  required onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className='mb-3'>
-                    <Form.Label> Price{$}</Form.Label>
+                    <Form.Label> Price$</Form.Label>
                     <Form.Control type='number' placeholder='Price($)'  value={price}  required onChange={(e) => setPrice(e.target.value)}/>
                 </Form.Group>
-                <Form.Group className='mb-3' onChange={(e)=>setCategroy(e.target.value)}>
+                <Form.Group className='mb-3' onChange={(e)=>setCategory(e.target.value)}>
                     <Form.Label>Category</Form.Label>
                     <Form.Select>
                       <option disabled selected>
@@ -57,7 +79,7 @@ const NewProduct = () => {
                         {images.map((image)=>(
                           <div className='image-preview'>
                             <img src={image.url}/>
-                              {/* add icon for removing */}
+                              <i className='fa fa-times-circle' onClick={()=> handleRemoveImg(image)}></i>
                           </div>
 
                         ))}
