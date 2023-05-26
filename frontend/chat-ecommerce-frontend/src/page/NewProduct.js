@@ -26,6 +26,23 @@ const NewProduct = () => {
     }).catch((e) =>console.log(e));
   }
 
+  function handleSubmit(e){
+    e.preventDefault();
+    if(!name || !description || !price || !category || !images.length) {
+      return alert("Please fill out all the fields");
+    }
+    createProduct({name,description, price, category, images})
+    .then(({data}) => {
+      if(data.length > 0 ){
+        setTimeout(()=>{
+          navigate('/')
+        }, 1500)
+      }
+    })
+
+  }
+
+
   function showWidget(){
     const widget = window.cloudinary.createUploadWidget(
       {
@@ -45,7 +62,7 @@ const NewProduct = () => {
       <Container>
         <Row>
           <Col md={6} className='new-product__form--container'>
-          <Form style ={{width: "100%"}}>
+          <Form style ={{width: "100%"}} onSubmit = {handleSubmit}>
                 <h1>Create a product</h1>
                 {isSuccess && <Alert variant='success'> Product create with success</Alert>}
                 {isError && <Alert variant="danger">{error.data}</Alert> }
