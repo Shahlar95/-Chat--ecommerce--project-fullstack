@@ -63,7 +63,7 @@ const NewProduct = () => {
         <Row>
           <Col md={6} className='new-product__form--container'>
           <Form style ={{width: "100%"}} onSubmit = {handleSubmit}>
-                <h1>Create a product</h1>
+                <h1 className='mt-4'>Create a product</h1>
                 {isSuccess && <Alert variant='success'> Product create with success</Alert>}
                 {isError && <Alert variant="danger">{error.data}</Alert> }
                 <Form.Group className='mb-3'>
