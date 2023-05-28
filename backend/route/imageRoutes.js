@@ -4,12 +4,12 @@ require('dotenv').config();
 
 
 cloudinary.config({
-    cloud_name:"",
-    api_key:"",
-    api_secret:""
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET
 })
 
-router.delete('/;public_id', async(req,res) => {
+router.delete('/:public_id', async(req,res) => {
     const {public_id} = req.params;
 
     try{

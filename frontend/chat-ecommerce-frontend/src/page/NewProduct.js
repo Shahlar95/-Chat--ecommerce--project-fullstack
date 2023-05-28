@@ -22,7 +22,7 @@ const NewProduct = () => {
     axios.delete(`/images/${imgObj.public_id}`)
     .then((res)=> {
       setImgToRemove(null);
-      setImages((prev) => prev.filter((img)=>img.public_id !== imjObj.public_id))
+      setImages((prev) => prev.filter((img)=>img.public_id !== imgObj.public_id))
     }).catch((e) =>console.log(e));
   }
 
@@ -46,7 +46,7 @@ const NewProduct = () => {
   function showWidget(){
     const widget = window.cloudinary.createUploadWidget(
       {
-        cloudName:"Shahlar Abbasov",
+        cloudName:"dxna0htgl",
         uploadPreset:"sefrvu4x",
       },
       (error,result) =>{
@@ -96,7 +96,7 @@ const NewProduct = () => {
                         {images.map((image)=>(
                           <div className='image-preview'>
                             <img src={image.url}/>
-                              <i className='fa fa-times-circle' onClick={()=> handleRemoveImg(image)}></i>
+                            {imgToRemove != image.public_id &&  <i className='fa fa-times-circle' onClick={()=> handleRemoveImg(image)}></i>}
                           </div>
 
                         ))}
