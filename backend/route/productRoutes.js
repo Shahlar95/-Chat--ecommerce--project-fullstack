@@ -49,7 +49,7 @@ router.delete('/:id', async(req,res)=>{
         const user = await User.findById(user_id);
         if(!user.isAdmin) return res.status(401).json("You don't have permission");
         await Product.findByIdAndDelete(id);
-        res.status(200).json(products);
+        res.status(200).json(Product);
     } catch(e){
          res.status(400).send(e.message)
     }

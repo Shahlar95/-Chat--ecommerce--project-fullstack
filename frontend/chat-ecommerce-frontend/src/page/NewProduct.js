@@ -46,7 +46,7 @@ const NewProduct = () => {
   function showWidget(){
     const widget = window.cloudinary.createUploadWidget(
       {
-        cloudName:"dxna0htgl",
+        cloudName:"shahlar-abbasov",
         uploadPreset:"sefrvu4x",
       },
       (error,result) =>{

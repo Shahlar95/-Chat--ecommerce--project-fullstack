@@ -14,7 +14,7 @@ const io = new Server(server, {
 const User = require('./models/User');
 const userRoutes = require('./route/userRoutes');
 const productRoutes = require('./route/productRoutes');
-const imageRoutes = require('./routes/imageRoutes');
+const imageRoutes = require('./route/imageRoutes');
 
  
 
