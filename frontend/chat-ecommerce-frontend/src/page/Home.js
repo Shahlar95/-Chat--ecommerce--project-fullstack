@@ -23,9 +23,11 @@ useEffect(()=>{
       <div className='featured-products-container mt-4'>
         <h2>Last products</h2>
         {/* last products here */}
+        <div className='d-flex justify-content-center flex-wrap'>
         {lastProducts.map((product)=>(
           <ProductPreview {...product}/>
         ))}
+        </div>
         <div>
         <Link to="/category/all" style={{textAlign:"center", display:"block", textDecoration:"none"}}>
           See more {">>"}
