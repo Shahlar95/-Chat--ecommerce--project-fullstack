@@ -1,7 +1,7 @@
 import React from 'react';
-import { Badge, Card } from 'react-bootstrap';
+import { Badge, Card, CardImg } from 'react-bootstrap';
 import LinkContainer from "react-router-bootstrap/LinkContainer";
-import "ProductPreview.css";
+import "./ProductPreview.css";
 
 
 const SimilarProduct = ({_id, name, category, pictures}) => {

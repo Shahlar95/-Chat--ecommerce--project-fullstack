@@ -46,7 +46,7 @@ const NewProduct = () => {
   function showWidget(){
     const widget = window.cloudinary.createUploadWidget(
       {
-        cloudName:"shahlar-abbasov",
+        cloudName:"dxna0htgl",
         uploadPreset:"sefrvu4x",
       },
       (error,result) =>{
@@ -94,7 +94,7 @@ const NewProduct = () => {
                    <Button type='button'  onClick={showWidget}>Upload Images</Button>
                    <div className='images-preview-container'>
                         {images.map((image)=>(
-                          <div className='image-preview'>
+                          <div key={image.name} className='image-preview'>
                             <img src={image.url}/>
                             {imgToRemove != image.public_id &&  <i className='fa fa-times-circle' onClick={()=> handleRemoveImg(image)}></i>}
                           </div>
