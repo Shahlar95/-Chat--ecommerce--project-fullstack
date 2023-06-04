@@ -8,6 +8,7 @@ import Signup from './page/Signup';
 import { useSelector } from 'react-redux';
 import NewProduct from './page/NewProduct';
 import ProductPage from './page/ProductPage';
+import CategoryPage from './page/CategoryPage';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
         
         </>}
         <Route path='/product/:id' element={<ProductPage/>}/>
+        <Route path='/category/:category' element={<CategoryPage/>}/>
+
         <Route path='/new-product' element={<NewProduct/>}/>
         <Route path='*' element={<Home/>}/>
       </Routes>
