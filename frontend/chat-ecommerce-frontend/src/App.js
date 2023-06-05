@@ -9,6 +9,8 @@ import { useSelector } from 'react-redux';
 import NewProduct from './page/NewProduct';
 import ProductPage from './page/ProductPage';
 import CategoryPage from './page/CategoryPage';
+import ScrollToTop from './components/ScrollToTop';
+import CartPage from './page/CartPage';
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <ScrollToTop/>
       <Navigation/>
       <Routes>
         <Route index element = {<Home/>}/>
@@ -26,6 +29,11 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         
         </>}
+        {user && (
+          <>
+          <Route path='/cart' element={<CartPage/>}/>
+          </>
+        )}
         <Route path='/product/:id' element={<ProductPage/>}/>
         <Route path='/category/:category' element={<CategoryPage/>}/>
 
