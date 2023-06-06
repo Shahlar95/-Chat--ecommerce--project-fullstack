@@ -57,7 +57,7 @@ UserSchema.statics.findByCredentials = async function(email,password){
 };
 
 UserSchema.methods.toJSON = function(){
-    const user =this;
+    const user = this;
     const userObject = user.toObject();
     delete userObject.password;
     return userObject;
@@ -68,9 +68,9 @@ UserSchema.methods.toJSON = function(){
 
 UserSchema.pre('save', function(next) {
 
-    const user =this;
+    const user = this;
 
-    if(!user.isModified('passoword')) return next();
+    if(!user.isModified('password')) return next();
 
     bcrypt.genSalt(10, function(err, salt){
         if(err) return next(err);
@@ -85,7 +85,7 @@ UserSchema.pre('save', function(next) {
 })
 
 UserSchema.pre('remove' , function(next){
-    this.model('Order').remove({owner: this._id, next});
+    this.model('Order').remove({owner: this._id}, next);
 })
 
 

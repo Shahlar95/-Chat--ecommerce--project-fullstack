@@ -12,7 +12,7 @@ import axios from '../axios'
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state.products);
-  const lastProducts = products.slice(0, 8);
+  const lastProducts = products  //.slice(0, 8);
 useEffect(()=>{
   axios.get('/products').then(({data}) => dispatch(updateProducts(data)))
 },[])
@@ -24,9 +24,9 @@ useEffect(()=>{
         <h2>Last products</h2>
         {/* last products here */}
         <div className='d-flex justify-content-center flex-wrap'>
-        {lastProducts.map((product)=>(
+        {/* {lastProducts.map((product)=>(
           <ProductPreview {...product}/>
-        ))}
+        ))} */}
         </div>
         <div>
         <Link to="/category/all" style={{textAlign:"center", display:"block", textDecoration:"none"}}>
