@@ -9,6 +9,7 @@ import Loading from '../components/Loading';
 import SimilarProduct from '../components/SimilarProduct';
 import './ProductPage.css';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
+import { useAddToCartMutation } from '../services/appApi';
 
 
 function ProductPage() {
@@ -16,7 +17,9 @@ function ProductPage() {
     const user = useSelector(state=>state.user);
     const [product, setProduct] = useState(null);
     const [similar, setSimilar] = useState(null);
+    const [addToCart, {isSuccess}] = useAddToCartMutation()
     const handleDragStart = (e) => e.preventDefault();
+
     useEffect(()=>{
         axios.get(`/products/${id}`).then(({data}) => {
             setProduct(data.product);
@@ -67,7 +70,7 @@ function ProductPage() {
                     <option value='4'>4</option>
                     <option value='5'>5</option>
                     </Form.Select>
-                    <Button size='lg'>Add to Card</Button>
+                    <Button size='lg' onClick={() => addToCart({userId: user._id, productId: id, price: product.price, image: product.pictures[0].url})}>Add to Card</Button>
                     </ButtonGroup>
                  )}
                  { user && user.isAdmin && (
