@@ -107,4 +107,59 @@ router.post('/add-to-cart', async(req,res) =>{
 
 })
 
+router.post('/increase-cart', async(req,res) =>{
+    const {userId, productId, price} = req.body;
+    try{
+        const user = await User.findById(userId);
+        const userCart = user.cart;
+        userCart.total += Number(price);
+        userCart[productId] +=1;
+        userCart.count += 1;
+        user.cart = userCart;
+        user.markModified('cart');
+        await user.save();
+        res.status(200).json(user);
+    }catch(e){
+        res.status(400).status(e.message);
+    }
+
+})
+
+router.post('/decrease-cart', async(req,res) =>{
+    const {userId, productId, price} = req.body;
+    try{
+        const user = await User.findById(userId);
+        const userCart = user.cart;
+        userCart.total -= Number(price);
+        userCart[productId] -=1;
+        userCart.count -= 1;
+        user.cart = userCart;
+        user.markModified('cart');
+        await user.save();
+        res.status(200).json(user);
+    }catch(e){
+        res.status(400).status(e.message);
+    }
+
+})
+
+router.post('/remove-from-cart', async(req,res) =>{
+    const {userId, productId, price} = req.body;
+    try{
+        const user = await User.findById(userId);
+        const userCart = user.cart;
+        userCart.total +=Number(userCart[productId]) * Number(price);
+        userCart.count += userCart[productId];
+        delete userCart[productId]
+        user.cart = userCart;
+        user.markModified('cart');
+        await user.save();
+        res.status(200).json(user);
+    }catch(e){
+        res.status(400).status(e.message);
+    }
+
+})
+
+
 module.exports = router;
