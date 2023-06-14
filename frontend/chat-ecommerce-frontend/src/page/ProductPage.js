@@ -78,7 +78,7 @@ function ProductPage() {
                     <Button size='lg'>Edit Product</Button>
                     </LinkContainer>
                  )}
-                 {isSuccess}
+                 {isSuccess && <ToastMessage item={product.name} bg='info' title='Added to cart' body={`${product.name} is in your cart`}/>}
             </Col>
         </Row>
         <div className='my-4'>
