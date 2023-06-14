@@ -78,6 +78,7 @@ function ProductPage() {
                     <Button size='lg'>Edit Product</Button>
                     </LinkContainer>
                  )}
+                 {isSuccess}
             </Col>
         </Row>
         <div className='my-4'>
