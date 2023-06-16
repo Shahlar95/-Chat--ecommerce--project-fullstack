@@ -11,11 +11,22 @@ function CartPage() {
   return (
     <Container style={{minHeight: "95vh"}} className='cart-container'>
         <Row>
+          <Col md={7}>
             <h1 className='pt-2 h3'>Shopping Cart</h1>
             {cart.length == 0 ? (<Alert variant='info' >Shopping cart is empty. Add products to your cart</Alert>) 
             : (
                 <div>Payment here </div>
             )}
+            </Col>
+            {cart.length > 0 && (
+                <>
+                <Table responsive='sm' className='cart-table'>
+
+                </Table>
+                </>
+            )}
+            <Col md={5}>
+            </Col>
         </Row>
     </Container>
   )
