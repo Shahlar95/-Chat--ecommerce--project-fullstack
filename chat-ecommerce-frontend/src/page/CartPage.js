@@ -1,3 +1,4 @@
+import { loadStripe} from '@stripe/stripe-js'
 import React from "react";
 import "./CartPage.css";
 import { useSelector } from "react-redux";
@@ -7,6 +8,8 @@ import {
   useDecreaseCartProductMutation,
   useRemoveFromCartMutation,
 } from "../servises/appApi";
+
+const stripePromise = loadStripe("pk_test_51NKG61BbcbmUVZms9o2ZsY3ggv1IneGjWN47s8JAeM8Olwt7iekHqFPkW07hHBvS6c04MjNmtzk9mCBT8rj0jhDW001MAHWs7y")
 
 function CartPage() {
   const user = useSelector((state) => state.user);
