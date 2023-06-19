@@ -1,3 +1,4 @@
+import {Elements} from '@stripe/react-stripe-js'
 import { loadStripe} from '@stripe/stripe-js'
 import React from "react";
 import "./CartPage.css";
@@ -34,7 +35,7 @@ function CartPage() {
               Shopping cart is empty. Add products to your cart
             </Alert>
           ) : (
-            <div>Payment here </div>
+            <Elements stripe ={stripePromise}><CheckoutForm/></Elements>
           )}
         </Col>
         {cart.length > 0 && (
