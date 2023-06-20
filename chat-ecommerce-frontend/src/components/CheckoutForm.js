@@ -18,13 +18,32 @@ function CheckoutForm({paying, setPaying}) {
     function handlePay(e){
         if(!stripe || !elements || !user.cart.count <=0) return;
         setPaying(true);
-        const {client_secret} = //await 
+        const {client_secret} = await 
         fetch('http://localhost:8080/create-payment',{
             method: "POST",
             headers:{
                 "Content-Type" : "appilcation/json"
-            }
-        })
+            },
+            body: JSON.stringify({amount: user.cart.total}),
+        }).then((res) => res.json());
+
+        const { paymentIntent } = await stripe.confirmCardPayment(client_secret, {
+            payment_method: {
+                card: elements.getElement(CardElement),
+            },
+        });
+        setPaying(false);
+
+        if(paymentIntent){
+            createOrder({userId: user._id, cart: user.cart, address, country}).then(res =>{
+                if(!isLoading && !isError) {
+                    setAlertMessage(`Payment ${paymentIntent.status}`);
+                    setTimeout(()=>{
+                        navigate('/orders')
+                    }, 2000);
+                }
+            })
+        }
     }
   return (
     <Col md={7} className="cart-payment-container">
