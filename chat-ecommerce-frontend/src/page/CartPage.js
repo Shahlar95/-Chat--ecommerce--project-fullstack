@@ -20,6 +20,7 @@ function CartPage() {
   const [increaseCart] = useIncreaseCartProductMutation();
   const [decreaseCart] = useDecreaseCartProductMutation();
   const [removeFromCart, {isLoading}] = useRemoveFromCartMutation();
+  
   function handleDecrease(product) {
     const quantity = user.cart.count;
     if (quantity <= 0) return alert("Can't proceed");

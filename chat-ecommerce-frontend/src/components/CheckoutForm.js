@@ -14,9 +14,12 @@ function CheckoutForm({paying, setPaying}) {
     const [ createOrder, {isLoading, isError}] = useCreateOrderMutation();
     const [country, setCountry] = useState('');
     const [address, setAddress] = useState('');
+    const [paying, setPaying] = useState(false);
 
     function handlePay(e){
-        if(!stripe || !elements || !user.cart.count <=0) return;
+        e.preventDefault();
+
+        if(!stripe || !elements || user.cart.count <=0) return;
         setPaying(true);
         const {client_secret} = await 
         fetch('http://localhost:8080/create-payment',{
