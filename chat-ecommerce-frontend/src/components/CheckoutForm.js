@@ -11,7 +11,7 @@ function CheckoutForm({paying, setPaying}) {
     const user = useSelector(state => state.user);
     const navigate = useNavigate();
     const [alertMessage, setAlertMessage ] = useState("");
-    const [ createOrder, {isLoading, isError}] = useCreateOrderMutation();
+    const [ createOrder, {isLoading, isError, isSuccess}] = useCreateOrderMutation();
     const [country, setCountry] = useState('');
     const [address, setAddress] = useState('');
     const [paying, setPaying] = useState(false);
@@ -69,19 +69,19 @@ function CheckoutForm({paying, setPaying}) {
         <Col md={6}>
         <Form.Group className='mb3'>
             <Form.Label>Address</Form.Label>
-            <Form.Control type='text' placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} disabled/>
+            <Form.Control type='text' placeholder='Address' value={address} onChange={(e) => setAddress(e.target.value)} disabled required/>
         </Form.Group>
         </Col>
         <Col md={6}>
         <Form.Group className='mb3'>
             <Form.Label>Country</Form.Label>
-            <Form.Control type='text' placeholder='Country' value={country} onChange={(e) => setCountry(e.target.value)} disabled/>
+            <Form.Control type='text' placeholder='Country' value={country} onChange={(e) => setCountry(e.target.value)} disabled required/>
         </Form.Group>
         </Col>
         </Row>
         <label htmlFor="card-element" >Card</label>
         <CardElement id="card-element"/>
-        <Button className='mt-3' type='submit' disabled ={user.cart.count <= 0 || paying} >
+        <Button className='mt-3' type='submit' disabled ={user.cart.count <= 0 || paying || isSuccess} >
             {paying ? "Processing..." : "Pay" }
         </Button>
     </Form>

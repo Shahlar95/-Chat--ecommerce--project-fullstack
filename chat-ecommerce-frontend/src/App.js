@@ -11,6 +11,7 @@ import ProductPage from './page/ProductPage';
 import CategoryPage from './page/CategoryPage';
 import ScrollToTop from './components/ScrollToTop';
 import CartPage from './page/CartPage';
+import OrdersPage from './page/OrdersPage';
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
         {user && (
           <>
           <Route path='/cart' element={<CartPage/>}/>
+          <Route path='/orders' element={<OrdersPage/>}/>
+
           </>
         )}
         <Route path='/product/:id' element={<ProductPage/>}/>
