@@ -22,7 +22,15 @@ function OrdersPage() {
       setLoading(false);
       console.log(e);
     })
-  }, [])
+  }, []);
+
+  if(loading){
+    return <Loading/>
+  }
+
+  if(orders.length === 0) {
+    return <h1 className='text-center pt-3'>No orders yet</h1>
+  }
 
   return (
     <Container>
@@ -45,7 +53,7 @@ function OrdersPage() {
                 {order.status}
                 </Badge>
                 </td>
-              <td>${oder.total}</td>
+              <td>${order.total}</td>
               <td></td>
             </tr>
           )
