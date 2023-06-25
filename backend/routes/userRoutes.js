@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/User');
+const Order = require('../models/Order');
 
 
 //signup
@@ -42,7 +43,17 @@ router.get('/', async(req,res)=>{
 })
 
 
+//get users orders
 
+router.get('/:id/orders', async (req, res) =>{
+    const {id} = req.params;
+    try{
+        const user = await User.findByID(id).populate('orders');
+        res.json(user.orders);
+    }catch (e) {
+        res.status(400).json(e.message);
+    }
+})
 
 
 
