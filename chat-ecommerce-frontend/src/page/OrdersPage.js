@@ -40,8 +40,8 @@ function OrdersPage() {
           <tr>
           <th>#</th>
           <th>Status</th>
+          <th>Date</th>
           <th>Total</th>
-          <th>&nbsp;</th>
           </tr>
         </thead>
         <tbody>
@@ -53,6 +53,7 @@ function OrdersPage() {
                 {order.status}
                 </Badge>
                 </td>
+                <td>{order.date}</td>
               <td>${order.total}</td>
               <td></td>
             </tr>
