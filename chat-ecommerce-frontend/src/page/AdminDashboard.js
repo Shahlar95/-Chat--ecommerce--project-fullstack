@@ -8,7 +8,7 @@ function AdminDashboard() {
     <Container>
         <Tab.Container>
             <Row>
-                <Col md={3}>
+                <Col sm={3}>
                 <Nav variant = 'pills' className='flex-columns'>
                     <Nav.Item>
                     <Nav.Link eventKey="products">Products</Nav.Link>
@@ -21,7 +21,7 @@ function AdminDashboard() {
                     </Nav.Item>
                 </Nav>
                 </Col>
-                <Col  md={9}>
+                <Col  sm={9}>
                     <Tab.Content>Hello</Tab.Content>
                 </Col>
             </Row>

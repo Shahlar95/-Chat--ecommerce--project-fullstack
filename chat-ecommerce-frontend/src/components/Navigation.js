@@ -47,7 +47,7 @@ const Navigation = () => {
               <NavDropdown title={`${user.email}`} id="basic-nav-dropdown">
                 {user.isAdmin && (
                   <>
-                  <LinkContainer to="/dashboard">
+                  <LinkContainer to="/admin">
                   <NavDropdown.Item >Dashboard</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/new-product">
@@ -65,6 +65,7 @@ const Navigation = () => {
                 </LinkContainer>
                 </>
               )}
+              
               <NavDropdown.Divider />
               <Button variant= "danger" onClick={handleLogout} className="logout-btn">Logout</Button>
             </NavDropdown>
