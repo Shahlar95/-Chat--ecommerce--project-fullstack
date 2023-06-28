@@ -6,10 +6,10 @@ import { Container,Nav,Tab, Col, Row } from 'react-bootstrap';
 function AdminDashboard() {
   return (
     <Container>
-        <Tab.Container>
+        <Tab.Container defaultAktivKey = "products">
             <Row>
                 <Col sm={3}>
-                <Nav variant = 'pills' className='flex-columns'>
+                <Nav variant = 'pills' className='flex-column'>
                     <Nav.Item>
                     <Nav.Link eventKey="products">Products</Nav.Link>
                     </Nav.Item>
