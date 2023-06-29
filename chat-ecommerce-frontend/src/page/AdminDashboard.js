@@ -22,7 +22,9 @@ function AdminDashboard() {
                 </Nav>
                 </Col>
                 <Col  sm={9}>
-                    <Tab.Content>Hello</Tab.Content>
+                    <Tab.Content eventKey='products'>
+                        <DashboardProducts/>
+                    </Tab.Content>
                 </Col>
             </Row>
         </Tab.Container>

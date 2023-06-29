@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button , Table} from 'react-bootstrap';
 import { useSelector } from 'react-redux';
+import Link from 'react-router-dom';
+import './DashboardProducts.css';
 
 
 function DashboardProducts() {
@@ -25,7 +27,7 @@ function handleDeleteProduct (id){
     {products.map((product) =>(
         <tr>
             <td>
-                <img src={pictures[0].url} className='dashboard-product-preview'/>
+                <img src={product.pictures[0].url} className='dashboard-product-preview'/>
             </td>
             <td>{product._id}</td>
             <td>{product.name}</td>
