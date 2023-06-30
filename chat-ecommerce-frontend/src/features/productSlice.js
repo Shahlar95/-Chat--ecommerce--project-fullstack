@@ -14,6 +14,12 @@ export const productSlice = createSlice({
             return action.payload;
         }
     },
+    extraReducers:(builder) =>{
+        builder.addMatcher(appApi.endpoints.createProduct.matchFulfilled, (_,{payload})=> payload);
+        builder.addMatcher(appApi.endpoints.updateProductProduct.matchFulfilled, (_,{payload})=> payload);
+        builder.addMatcher(appApi.endpoints.deleteProduct.matchFulfilled, (_,{payload})=> payload);
+
+    }
 
 });
 
