@@ -95,7 +95,7 @@ const EditProductPage = () => {
                 </Form.Group>
                 <Form.Group className='mb-3' onChange={(e)=>setCategory(e.target.value)}>
                     <Form.Label>Category</Form.Label>
-                    <Form.Select>
+                    <Form.Select value={category}>
                       <option disabled selected>
                       -- Select One --
                       </option>
@@ -118,7 +118,7 @@ const EditProductPage = () => {
                    </div>
                 </Form.Group>
                 <Form.Group>
-                    <Button type='submit' disabled={isLoading || isSuccess}>Create Product</Button>
+                    <Button type='submit' disabled={isLoading || isSuccess}>Update Product</Button>
                 </Form.Group>
                
             </Form>
