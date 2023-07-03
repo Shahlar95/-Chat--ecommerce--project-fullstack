@@ -3,6 +3,7 @@ import "./OrdersPage.css";
 import axios from '../axios';
 import { useSelector } from 'react-redux';
 import { Badge, Container } from 'react-bootstrap';
+import Loading from '../components/Loading'
 
 function OrdersPage() {
   const user = useSelector(state => state.user);
