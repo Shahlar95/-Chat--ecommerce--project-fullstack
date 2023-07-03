@@ -11,6 +11,10 @@ function OrdersAdminPage() {
     const [orderToShow, setOrderToShow] = useState([]);
     const [show, setShow] = useState(false);
 
+    function  markShipped(orderId, ownerId){
+        
+    }
+
     useEffect(()=>{
         setLoading(true);
         axios.get('/orders')
@@ -37,19 +41,24 @@ function OrdersAdminPage() {
     <thead>
       <tr>
       <th>#</th>
-      <th>Status</th>
-      <th>Date</th>
-      <th>Total</th>
+      <th>Client Name</th>
+      <th>Items</th>
+      <th>Orders Total</th>
+      <th>Address</th>
       </tr>
     </thead>
     <tbody>
       {orders.map((order) =>(
         <tr>
           <td>{order._id}</td>
+          <td>{order.owner?.name}</td>
+          <td>{order.count}</td>
+          <td>{order.total}</td>
+          <td>{order.adress}</td>
+
+
           <td>
-            <Badge bg={`${order.status == "proceessing" ? "warning" : "success"}`} text='white'>
-            {order.status}
-            </Badge>
+            {order.status === 'processing' ? <Button size='sm' onClick={()=>markShipped(order._id, order.owner?._id )}>Mark as Shipped</Button> : <Badge bg='success'>Shipped</Badge>}
             </td>
             <td>{order.date}</td>
           <td>${order.total}</td>
