@@ -29,6 +29,9 @@ function AdminDashboard() {
                     <Tab.Pane eventKey='orders'>
                         <OrdersAdminPage/>
                     </Tab.Pane>
+                    <Tab.Pane eventKey='clients'>
+                        <ClientsAdminPage/>
+                    </Tab.Pane>
                     </Tab.Content>
                 </Col>
             </Row>
