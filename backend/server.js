@@ -8,8 +8,8 @@ require('./connection')
 const server = http.createServer(app);
 const {Server} = require('socket.io');
 const io = new Server(server, {
-    cors: '*',
-    methods: '*'
+    cors: 'http://localhost:3001',
+    methods: ["GET", "POST", "PATCH", 'DELETE']
 })
 
 

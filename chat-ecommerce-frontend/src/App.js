@@ -17,6 +17,12 @@ import AdminDashboard from './page/AdminDashboard';
 
 function App() {
   const user = useSelector((state)=> state.user);
+  useEffect(()=>{
+    const socket = io("ws://localhist:8080");
+    socket.off("notification").on("notification", (msgObj, user_id) =>{
+      //logic for notification
+    })
+  })
 
   return (
     <div className="App">

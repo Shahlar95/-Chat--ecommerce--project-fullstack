@@ -3,7 +3,7 @@ import axios from '../axios';
 import Loading from '../components/Loading'
 
 
-function ClientsAdminPage() {
+function usersAdminPage() {
     const [users, setUsers] = useState(null);
     const [loading , setLoading] = useState(false);
 
@@ -29,36 +29,18 @@ function ClientsAdminPage() {
         <th>#</th>
         <th>Client Name</th>
         <th>Items</th>
-        <th>clientss Total</th>
+        <th>Client Total</th>
         <th>Address</th>
       </tr>
     </thead>
     <tbody>
-      {clientss.map((clients) => (
+      {users.map((users) => (
         <tr>
-          <td>{clients._id}</td>
-          <td>{clients.owner?.name}</td>
-          <td>{clients.count}</td>
-          <td>{clients.total}</td>
-          <td>{clients.adress}</td>
-
-          <td>
-            {clients.status === "processing" ? (
-              <Button
-                size="sm"
-                onClick={() => markShipped(clients._id, clients.owner?._id)}
-              >
-                Mark as Shipped
-              </Button>
-            ) : (
-              <Badge bg="success">Shipped</Badge>
-            )}
-          </td>
-          <td>
-              <span style={{cursor:"pointer"}} onClick={()=> showclients(clients.products)} >
-                  View clients <i className="fa fa-eye"></i>
-              </span>
-          </td>
+          <td>{users._id}</td>
+          <td>{users.name}</td>
+          <td>{users.email}</td>
+          <td>{users.total}</td>
+          <td>{users.adress}</td>
         </tr>
       ))}
     </tbody>
@@ -66,4 +48,4 @@ function ClientsAdminPage() {
   )
 }
 
-export default ClientsAdminPage
+export default usersAdminPage
