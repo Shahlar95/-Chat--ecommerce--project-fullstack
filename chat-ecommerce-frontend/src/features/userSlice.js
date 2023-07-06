@@ -11,6 +11,14 @@ export const userSlice = createSlice({
     initialState,
     reducers:{
         logout:()=> initialState,
+        addNotification: (state, action) =>{
+            state.notifications.unshift(action.payload);
+        },
+        resetNotofocation: (state) =>{
+            state.notifications.forEach(obj => {
+                obj.status = 'read';
+            });
+        }
     },
     extraReducers: (builder) => {
         builder.addMatcher(appApi.endpoints.signup.matchFulfilled, (_, {payload})=> payload);
@@ -27,5 +35,5 @@ export const userSlice = createSlice({
 });
 
 
-export const { logout } = userSlice.actions;
+export const { logout, addNotification, resetNotofocation} = userSlice.actions;
 export default userSlice.reducer;

@@ -5,7 +5,7 @@ import Navigation from './components/Navigation';
 import Home from './page/Home';
 import Login from './page/Login';
 import Signup from './page/Signup';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NewProduct from './page/NewProduct';
 import ProductPage from './page/ProductPage';
 import CategoryPage from './page/CategoryPage';
@@ -17,10 +17,14 @@ import AdminDashboard from './page/AdminDashboard';
 
 function App() {
   const user = useSelector((state)=> state.user);
+  const dispatch = useDispatch()
   useEffect(()=>{
     const socket = io("ws://localhist:8080");
     socket.off("notification").on("notification", (msgObj, user_id) =>{
       //logic for notification
+      if(user_id === user._id){
+        dispatch()
+      }
     })
   })
 
