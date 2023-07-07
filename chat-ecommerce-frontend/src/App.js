@@ -13,6 +13,7 @@ import ScrollToTop from './components/ScrollToTop';
 import CartPage from './page/CartPage';
 import OrdersPage from './page/OrdersPage';
 import AdminDashboard from './page/AdminDashboard';
+import { addNotification } from './features/userSlice';
 
 
 function App() {
@@ -23,7 +24,12 @@ function App() {
     socket.off("notification").on("notification", (msgObj, user_id) =>{
       //logic for notification
       if(user_id === user._id){
-        dispatch()
+        dispatch(addNotification(msgObj))
+      }
+    });
+    socket.off('new-order').on('new-order', ( msgObj)=>{
+      if(user.isAdmin){
+        dispatch(addNotification(msgObj));
       }
     })
   })
