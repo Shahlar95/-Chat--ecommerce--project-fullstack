@@ -4,7 +4,7 @@ import Loading from '../components/Loading'
 
 
 function usersAdminPage() {
-    const [users, setUsers] = useState(null);
+    const [users, setUsers] = useState([]);
     const [loading , setLoading] = useState(false);
 
     useEffect(()=>{
@@ -20,7 +20,7 @@ function usersAdminPage() {
     },[]);
 
     if(loading) return <Loading/>;
-    if(users.length==0) return <h2 className='py2 text-center'>No users yet</h2>
+    if(users?.length==0) return <h2 className='py2 text-center'>No users yet</h2>
 
   return (
     <Table responsive striped bordered hover>

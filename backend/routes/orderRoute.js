@@ -43,6 +43,7 @@ router.get('/' , async(req,res) =>{
 //shipping order
 
 router.patch('/:id/mark-shipped' , async(req,res)=>{
+    const io = req.app.get('socketio')
     const {ownerId} = req.body;
     const {id} = req.params;
     try {

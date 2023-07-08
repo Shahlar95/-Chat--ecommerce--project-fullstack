@@ -99,13 +99,18 @@ const Navigation = () => {
       </Container>
       {/* notifications */}
       <div className='notifications-container'  ref = {notificationRef } style={{position:'absolute', top:bellPos.top + 30, left: bellPos.left, display: "none"}}>
-                {user?.notifications.map((notification)=>{
+               {user.notifications.length > 0 ? (
+                user?.notifications.map((notification)=> {
                   <p className={`notification-${notification.status}`}>
                     {notification.message}
                     <br/>
-                    <span>{notification.time}</span>
+                    <span>{notification.time.split('T')[0] + " " + notification.time.split('T')[1] }</span>
                   </p>
-                })}
+                }) 
+               ) : (
+                <p>no notifications yet</p>
+              )
+              }
       </div>
     </Navbar>
   );
