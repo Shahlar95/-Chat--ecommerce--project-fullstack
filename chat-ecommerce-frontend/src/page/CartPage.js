@@ -40,6 +40,8 @@ function CartPage() {
           )}
         </Col>
         {cart.length > 0 && (
+        <Col md={5}>
+        
           <>
             <Table responsive="sm" className="cart-table">
               <thead>
@@ -108,6 +110,7 @@ function CartPage() {
               <h3 className="h4 pt-4">Total: ${user.cart.total}</h3>
             </div>
           </>
+          </Col>
         )}
         <Col md={5}></Col>
       </Row>

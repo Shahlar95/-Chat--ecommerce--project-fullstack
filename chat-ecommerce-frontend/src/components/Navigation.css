@@ -53,13 +53,17 @@
     position: relative;
 }
 
+.fa-bell{
+    font-size: 1.5em;
+}
+
 .fas[data-count]:after{
 
     position: absolute;
     right: -0.75 em;
     top: -0.75 em;
-    content: attr([data-count]);
-    padding: 0 5em;
+    content: attr(data-count);
+    padding: 0.5em;
     border-radius: 10em;
     line-height: 0.9em;
     color: white;
