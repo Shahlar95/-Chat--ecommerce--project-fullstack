@@ -30,6 +30,9 @@ function CategoryPage() {
     }
     const productsSearch = product.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
+     function ProductSearch({pictures, _id, name, category}){
+       return  <ProductPreview _id={_id} category = {category} name={name} pictures={pictures} />
+     }
 
   return (
     <div className='category-page-container'>
@@ -43,11 +46,10 @@ function CategoryPage() {
         <Container>
             <Row>
                 <Col md= {{span:10, offset:1}}>
-               <div className='d-flex justify-content-center align-items-center flex-wrap'>
-               {productsSearch.map((product) =>(
-                    <ProductPreview {...product}/>
-                ))}
-               </div>
+               
+               
+                <Pagination data={productsSearch} RenderComponent={ProductSearch} pageLimit={1} dataLimit={10} tablePagination={false} />
+               
                 </Col>
             </Row>
         </Container>

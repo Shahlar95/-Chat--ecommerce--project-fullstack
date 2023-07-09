@@ -31,7 +31,7 @@ const Navigation = () => {
     setBellPos(position);
     notificationRef.current.style.display = notificationRef.current.style.display === "block" ? "none" : "block";
     dispatch(resetNotofocations());
-   if(unreadNotifications > 1) axios.post(`users/${user._id}/updateNotifications`)
+   if(unreadNotifications > 0 ) axios.post(`users/${user._id}/updateNotifications`)
   }
 
 
