@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { String } = require('yup');
+
 const OrderSchema = mongoose.Schema ({
     products: {
         type: Object
@@ -12,7 +12,7 @@ const OrderSchema = mongoose.Schema ({
     },
 
     status:{
-        type:String,
+        type: String,
         default: 'processing'
     },
 
@@ -39,7 +39,7 @@ const OrderSchema = mongoose.Schema ({
     }
 
     
-}, {minimalize:false});
+}, {minimize:false});
 
 const Order = mongoose.model('Order', OrderSchema);
 

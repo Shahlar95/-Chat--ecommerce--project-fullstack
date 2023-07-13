@@ -11,7 +11,7 @@ router.post('/', async(req,res)=>{
 
     try{
         const user = await User.findById(userId);
-        const order = await Order.create({owner: user._id, products: cart,country,address});
+        const order = await Order.create({owner: user._id, products: cart, country, address});
         order.count = cart.count;
         order.total = cart.total;
         await order.save();

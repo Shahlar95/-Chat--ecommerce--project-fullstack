@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../axios';
 import Loading from '../components/Loading'
+import { Table } from 'react-bootstrap';
 
 
-function usersAdminPage() {
+function ClientsAdminPage() {
     const [users, setUsers] = useState([]);
     const [loading , setLoading] = useState(false);
 
@@ -48,4 +49,4 @@ function usersAdminPage() {
   )
 }
 
-export default usersAdminPage
+export default ClientsAdminPage

@@ -14,7 +14,7 @@ export const userSlice = createSlice({
         addNotification: (state, action) =>{
             state.notifications.unshift(action.payload);
         },
-        resetNotofocation: (state) =>{
+        resetNotifications: (state) =>{
             state.notifications.forEach(obj => {
                 obj.status = 'read';
             });
@@ -35,5 +35,5 @@ export const userSlice = createSlice({
 });
 
 
-export const { logout, addNotification, resetNotofocation} = userSlice.actions;
+export const { logout, addNotification, resetNotifications} = userSlice.actions;
 export default userSlice.reducer;

@@ -1,5 +1,5 @@
-import {Elements} from '@stripe/react-stripe-js'
-import { loadStripe} from '@stripe/stripe-js'
+import {Elements} from '@stripe/react-stripe-js';
+import { loadStripe} from '@stripe/stripe-js';
 import React from "react";
 import "./CartPage.css";
 import { useSelector } from "react-redux";
@@ -8,7 +8,8 @@ import {
   useIncreaseCartProductMutation,
   useDecreaseCartProductMutation,
   useRemoveFromCartMutation,
-} from "../servises/appApi";
+} from "../services/appApi";
+import CheckoutForm from "../components/CheckoutForm"
 
 const stripePromise = loadStripe("pk_test_51NKG61BbcbmUVZms9o2ZsY3ggv1IneGjWN47s8JAeM8Olwt7iekHqFPkW07hHBvS6c04MjNmtzk9mCBT8rj0jhDW001MAHWs7y")
 

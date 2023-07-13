@@ -14,13 +14,17 @@ import CartPage from './page/CartPage';
 import OrdersPage from './page/OrdersPage';
 import AdminDashboard from './page/AdminDashboard';
 import { addNotification } from './features/userSlice';
+import { useEffect } from 'react';
+import EditProductPage from "./page/EditProductPage";
+import { io } from "socket.io-client";
+
 
 
 function App() {
   const user = useSelector((state)=> state.user);
   const dispatch = useDispatch()
   useEffect(()=>{
-    const socket = io("ws://localhist:8080");
+    const socket = io("ws://localhost:8080");
     socket.off("notification").on("notification", (msgObj, user_id) =>{
       //logic for notification
       if(user_id === user._id){

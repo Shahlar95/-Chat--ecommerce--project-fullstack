@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Badge, Button, Modal, Table } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import axios from "../axios";
-import Loading from "./Loading";
-import Pagination from "./Pagination";
+import Loading from "../components/Loading";
+import Pagination from "../components/Pagination";
 
 function OrdersAdminPage() {
     const [orders, setOrders] = useState([]);

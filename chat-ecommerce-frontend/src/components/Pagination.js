@@ -8,7 +8,7 @@ export default function Pagination({data, RenderComponent, title, pageLimit, dat
     function goToNextPage(){
         setCurrentPage((page)=> page + 1);
     }
-    function gotToPreviousPage(){
+    function goToPreviousPage(){
         setCurrentPage((page)=> page - 1);
     }
 

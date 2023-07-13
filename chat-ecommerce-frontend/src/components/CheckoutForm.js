@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useCreateOrderMutation } from '../services/appApi';
-import { Form, Alert, Col, Row } from 'react-bootstrap';
+import { Form, Alert, Col, Row, Button } from 'react-bootstrap';
 
-function CheckoutForm({paying, setPaying}) {
+function CheckoutForm() {
     const stripe = useStripe();
     const elements = useElements();
     const user = useSelector(state => state.user);
@@ -16,7 +16,7 @@ function CheckoutForm({paying, setPaying}) {
     const [address, setAddress] = useState('');
     const [paying, setPaying] = useState(false);
 
-    function handlePay(e){
+   async function handlePay(e){
         e.preventDefault();
 
         if(!stripe || !elements || user.cart.count <=0) return;

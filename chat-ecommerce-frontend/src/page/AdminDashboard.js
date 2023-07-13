@@ -2,6 +2,9 @@ import React from 'react';
 import axios from '../axios';
 import './AdminDashboard.css';
 import { Container,Nav,Tab, Col, Row } from 'react-bootstrap';
+import DashboardProducts from "../components/DashboardProducts";
+import OrdersAdminPage from '../components/OrdersAdminPage';
+import ClientsAdminPage from "../components/ClientsAdminPage";
 
 function AdminDashboard() {
   return (

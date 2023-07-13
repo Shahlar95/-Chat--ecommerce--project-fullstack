@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button , Table} from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import Link from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './DashboardProducts.css';
 import { useDeleteProductMutation } from '../services/appApi';
 import Pagination from './Pagination';
