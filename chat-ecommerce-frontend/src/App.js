@@ -20,6 +20,7 @@ import { io } from "socket.io-client";
 
 
 
+
 function App() {
   const user = useSelector((state)=> state.user);
   const dispatch = useDispatch()
@@ -67,6 +68,8 @@ function App() {
         )}
         <Route path='/product/:id' element={<ProductPage/>}/>
         <Route path='/category/:category' element={<CategoryPage/>}/>
+        
+
 
         <Route path='/new-product' element={<NewProduct/>}/>
         <Route path='*' element={<Home/>}/>
