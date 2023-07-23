@@ -3,6 +3,7 @@ import { Alert, Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useCreateProductMutation } from "../services/appApi";
 import axios from "../axios";
+import {instance} from  "../axios";
 import "./NewProduct.css";
 
 function NewProduct() {
@@ -26,15 +27,30 @@ function NewProduct() {
             .catch((e) => console.log(e));
     }
 
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     if (!name || !description || !price || !category || !images.length) {
+    //         return alert("Please fill out all the fields");
+    //     }
+
+    //     createProduct({ name, description, price, category, images }).then(({ data }) => {
+            
+    //         console.log(data)
+    //         if (data.length > 0) {
+    //             setTimeout(() => {
+    //                 navigate("/");
+    //             }, 1500);
+    //         }
+    //     });
+    // }
     function handleSubmit(e) {
         e.preventDefault();
         if (!name || !description || !price || !category || !images.length) {
             return alert("Please fill out all the fields");
         }
-
+    
         createProduct({ name, description, price, category, images }).then(({ data }) => {
-            
-            console.log(data)
+            console.log(data);
             if (data.length > 0) {
                 setTimeout(() => {
                     navigate("/");
