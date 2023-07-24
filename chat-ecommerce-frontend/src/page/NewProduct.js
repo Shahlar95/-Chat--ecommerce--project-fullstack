@@ -3,7 +3,6 @@ import { Alert, Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useCreateProductMutation } from "../services/appApi";
 import axios from "../axios";
-import {instance} from  "../axios";
 import "./NewProduct.css";
 
 function NewProduct() {
@@ -85,7 +84,7 @@ function NewProduct() {
                         {isError && <Alert variant="danger">{error.data}</Alert>}
                         <Form.Group className="mb-3">
                             <Form.Label>Product name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter product name" value={name} required onChange={(e) => setName(e.target.value)} />
+                            <Form.Control  type="text" placeholder="Enter product name" value={name} required onChange={(e) =>setName(e.target.value)} />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
