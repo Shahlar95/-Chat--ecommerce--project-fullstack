@@ -7,7 +7,8 @@ const User = require("../models/User");
 
 router.get('/', async(req,res)=>{
     try {
-        const products = await Product.find();
+        const sort = {'_id': -1};
+        const products = await Product.find().sort(sort);
         res.status(200).json(products);
     } catch (e) {
         res.status(400).send(e.message);

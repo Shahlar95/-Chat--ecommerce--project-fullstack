@@ -3,7 +3,7 @@ import { loadStripe} from '@stripe/stripe-js';
 import React from "react";
 import "./CartPage.css";
 import { useSelector } from "react-redux";
-import { Alert, Container, Row } from "react-bootstrap";
+import { Alert, Col, Container, Row, Table } from "react-bootstrap";
 import {
   useIncreaseCartProductMutation,
   useDecreaseCartProductMutation,

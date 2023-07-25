@@ -10,6 +10,7 @@ import SimilarProduct from '../components/SimilarProduct';
 import './ProductPage.css';
 import LinkContainer from 'react-router-bootstrap/LinkContainer';
 import { useAddToCartMutation } from '../services/appApi';
+import ToastMessage from "../components/ToastMessage";
 
 
 function ProductPage() {

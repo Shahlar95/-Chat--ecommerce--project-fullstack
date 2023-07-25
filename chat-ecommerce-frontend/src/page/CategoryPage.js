@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {Col, Container, Row,} from "react-bootstrap";
 import { useParams } from 'react-router-dom';
+import ProductPreview from "../components/ProductPreview"
+import  Pagination  from "../components/Pagination";
 
 
 function CategoryPage() {

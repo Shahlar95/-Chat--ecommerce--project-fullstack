@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useParams, useEffect} from 'react';
 import "./NewProduct.css";
 import { useNavigate, Link} from 'react-router-dom';
 import { useUpdateProductMutation } from '../services/appApi';
