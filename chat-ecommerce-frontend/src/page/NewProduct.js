@@ -26,30 +26,15 @@ function NewProduct() {
             .catch((e) => console.log(e));
     }
 
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     if (!name || !description || !price || !category || !images.length) {
-    //         return alert("Please fill out all the fields");
-    //     }
-
-    //     createProduct({ name, description, price, category, images }).then(({ data }) => {
-            
-    //         console.log(data)
-    //         if (data.length > 0) {
-    //             setTimeout(() => {
-    //                 navigate("/");
-    //             }, 1500);
-    //         }
-    //     });
-    // }
     function handleSubmit(e) {
         e.preventDefault();
         if (!name || !description || !price || !category || !images.length) {
             return alert("Please fill out all the fields");
         }
-    
+
         createProduct({ name, description, price, category, images }).then(({ data }) => {
-            console.log(data);
+            
+            console.log(data)
             if (data.length > 0) {
                 setTimeout(() => {
                     navigate("/");
@@ -57,6 +42,7 @@ function NewProduct() {
             }
         });
     }
+
 
     
     function showWidget() {

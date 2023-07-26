@@ -25,8 +25,8 @@ app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use('/users', userRoutes);
-app.use('products', productRoutes);
-app.use('orders', orderRoutes);
+app.use('/products', productRoutes);
+app.use('/orders', orderRoutes);
 app.use('/images', imageRoutes);
 
 
