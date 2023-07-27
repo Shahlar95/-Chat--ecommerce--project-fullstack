@@ -12,14 +12,16 @@ import axios from '../axios'
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state.products);
-  const lastProducts = products  //.slice(0, 8);
+  const lastProducts = products.slice(0, 8);
+ 
 useEffect(()=>{
   axios.get('/products').then(({data}) => dispatch(updateProducts(data)))
-},[])
+},[]);
+
 
   return (
     <div>
-      <img src="https://res.cloudinary.com/learn-code-10/image/upload/v1653947013/yqajnhqf7usk56zkwqi5.png"  className='home-banner'/>
+      <img src="https://res.cloudinary.com/learn-code-10/image/upload/v1653947013/yqajnhqf7usk56zkwqi5.png" alt="img" className='home-banner'/>
       <div className='featured-products-container mt-4'>
         <h2>Last products</h2>
         {/* last products here */}
@@ -36,7 +38,7 @@ useEffect(()=>{
     </div>
     {/* sale banner */}
     <div className="sale__banner--container mt-4">
-    <img src=" https://res.cloudinary.com/learn-code-10/image/upload/v1654093280/xkia6f13xxlk5xvvb5ed.png" />
+    <img src=" https://res.cloudinary.com/learn-code-10/image/upload/v1654093280/xkia6f13xxlk5xvvb5ed.png"  alt="img"/>
     </div>
     <div className='recent-products-container mt-4'>
       <h2>Categories</h2>
