@@ -13,7 +13,7 @@ import thunk from "redux-thunk";
 
 const reducer = combineReducers({
     user: userSlice,
-    product: productSlice,
+    products: productSlice,
     [appApi.reducerPath]: appApi.reducer,
 });
 

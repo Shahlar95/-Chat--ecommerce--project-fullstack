@@ -12,8 +12,7 @@ import axios from '../axios'
 const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state.products);
-  console.log(products)
-  const lastProducts = products.slice(0, 8);
+  const lastProducts =  products ? products.slice(0, 8) : [];
 
 useEffect(()=>{
   axios.get('/products').then(({data}) => dispatch(updateProducts(data)))
