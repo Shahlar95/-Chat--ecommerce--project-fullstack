@@ -3,10 +3,10 @@ import { CardImg, Card, Badge } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 
 
-const ProductPreview = ({_id, name, category, pictures}) => {
+const ProductPreview = ({_id, category, name,  pictures}) => {
   return (
    <LinkContainer to= {`/product/${_id}`} style={{cursor:"pointer", width:"13rem", margin:"10px"}}>
-   <Card style={{width:"20rem", margin:"10px"}}>
+   <Card style={{width:"15rem", margin:"10px"}}>
     <CardImg variant='top' className='product-preview-img'  src={pictures[0].url} style={{height:"150px", objectFit:"cover" }}/>
     <Card.Body>
     <Card.Title>{name}</Card.Title>
