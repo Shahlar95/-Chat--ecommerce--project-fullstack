@@ -76,7 +76,7 @@ function ProductPage() {
                  )}
                  { user && user.isAdmin && (
                     <LinkContainer to={`/product/${product._id}/edit`}>
-                    <Button size='lg'>Edit Product</Button>
+                    <Button style={{ marginTop: '20px' }} size='lg'>Edit Product</Button>
                     </LinkContainer>
                  )}
                  {isSuccess && <ToastMessage item={product.name} bg='info' title='Added to cart' body={`${product.name} is in your cart`}/>}
