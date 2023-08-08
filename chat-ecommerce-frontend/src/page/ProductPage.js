@@ -71,13 +71,15 @@ function ProductPage() {
                     <option value='4'>4</option>
                     <option value='5'>5</option>
                     </Form.Select>
-                    <Button size='lg' onClick={() => addToCart({userId: user._id, productId: id, price: product.price, image: product.pictures[0].url})}>Add to Card</Button>
+                    <Button  size='lg' onClick={() => addToCart({userId: user._id, productId: id, price: product.price, image: product.pictures[0].url})}>Add to Card</Button>
                     </ButtonGroup>
                  )}
                  { user && user.isAdmin && (
+                    <div style={{margin:'20px'}}>
                     <LinkContainer to={`/product/${product._id}/edit`}>
-                    <Button style={{ marginTop: '20px' }} size='lg'>Edit Product</Button>
+                    <Button size='lg'>Edit Product</Button>
                     </LinkContainer>
+                    </div>
                  )}
                  {isSuccess && <ToastMessage item={product.name} bg='info' title='Added to cart' body={`${product.name} is in your cart`}/>}
             </Col>

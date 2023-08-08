@@ -1,6 +1,6 @@
-import React, {useState, useParams, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./NewProduct.css";
-import { useNavigate, Link} from 'react-router-dom';
+import { useNavigate, useParams} from 'react-router-dom';
 import { useUpdateProductMutation } from '../services/appApi';
 import {Col, Container, Form, Row, Button, Alert} from 'react-bootstrap';
 import axios from '../axios';
