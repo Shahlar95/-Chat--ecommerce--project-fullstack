@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
-import './Pagination.css';
-
-
-export default function Pagination({data, RenderComponent, title, pageLimit, dataLimit, tablePagination}) {
-    const [pages] = useState(Math.floor(data.length/dataLimit) + 1) ;
+import { useState } from "react";
+import "./Pagination.css";
+export default function Pagination({ data, RenderComponent, title, pageLimit, dataLimit, tablePagination }) {
+    const [pages] = useState(Math.floor(data.length / dataLimit) + 1);
     const [currentPage, setCurrentPage] = useState(1);
-    function goToNextPage(){
-        setCurrentPage((page)=> page + 1);
-    }
-    function goToPreviousPage(){
-        setCurrentPage((page)=> page - 1);
+
+    function goToNextPage() {
+        setCurrentPage((page) => page + 1);
     }
 
-    function changePage(event){
+    function goToPreviousPage() {
+        setCurrentPage((page) => page - 1);
+    }
+
+    function changePage(event) {
         const pageNumber = Number(event.target.textContent);
         setCurrentPage(pageNumber);
     }
 
-   
     const getPaginatedData = () => {
         const startIndex = currentPage * dataLimit - dataLimit;
         const endIndex = startIndex + dataLimit;
