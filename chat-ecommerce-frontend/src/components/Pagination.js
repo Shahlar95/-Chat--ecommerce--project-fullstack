@@ -1,7 +1,15 @@
-import { useState } from "react";
+import React, {useState, useEffect} from 'react';
 import "./Pagination.css";
-export default function Pagination({ data, RenderComponent, title, pageLimit, dataLimit, tablePagination }) {
-    const [pages] = useState(Math.floor(data.length / dataLimit) + 1);
+export default function Pagination({ data = [], RenderComponent, title, pageLimit, dataLimit, tablePagination }) {
+   //const [pages] = useState(Math.floor(data.length / dataLimit) + 1);
+    const [pages, setPages] = useState(1);
+
+useEffect(() => {
+    if (data) {
+        setPages(Math.floor(data.length / dataLimit) + 1);
+    }
+}, [data, dataLimit]);
+
     const [currentPage, setCurrentPage] = useState(1);
 
     function goToNextPage() {
@@ -17,11 +25,22 @@ export default function Pagination({ data, RenderComponent, title, pageLimit, da
         setCurrentPage(pageNumber);
     }
 
+    // const getPaginatedData = () => {
+    //     const startIndex = currentPage * dataLimit - dataLimit;
+    //     const endIndex = startIndex + dataLimit;
+    //     return data.slice(startIndex, endIndex);
+    // };
     const getPaginatedData = () => {
+        if (!data) {
+            return [];
+        }
+    
         const startIndex = currentPage * dataLimit - dataLimit;
         const endIndex = startIndex + dataLimit;
         return data.slice(startIndex, endIndex);
     };
+    
+
 
     const getPaginationGroup = () => {
         let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
