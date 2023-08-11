@@ -7,7 +7,7 @@ import  Pagination  from "../components/Pagination";
 
 
 function CategoryPage() {
-    const category = useParams();
+    const {category} = useParams();
     const [Loading, setLoading] = useState(false);
     const [product,setProduct] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
