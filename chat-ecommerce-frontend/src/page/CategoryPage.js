@@ -4,11 +4,11 @@ import {Col, Container, Row,} from "react-bootstrap";
 import { useParams } from 'react-router-dom';
 import ProductPreview from "../components/ProductPreview"
 import  Pagination  from "../components/Pagination";
-
+import Loading from '../components/Loading';
 
 function CategoryPage() {
     const {category} = useParams();
-    const [Loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [product,setProduct] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -27,12 +27,12 @@ function CategoryPage() {
         }, [category]);
     });
 
-    if(Loading){
+    if(loading){
         <Loading/>;
     }
     const productsSearch = product.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
-     function ProductSearch({pictures, _id, name, category}){
+     function ProductSearch({ _id, name, category,pictures}){
        return  <ProductPreview _id={_id} category = {category} name={name} pictures={pictures} />
      }
 
