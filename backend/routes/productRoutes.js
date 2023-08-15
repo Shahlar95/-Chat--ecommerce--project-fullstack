@@ -56,32 +56,33 @@ router.delete('/:id', async(req,res)=>{
     }
 });
 
-router.get('/:id', async(req,res)=>{
-    const {id} = req.params;
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
     try {
         const product = await Product.findById(id);
-        const similar = await Product.find({category: product.category}).limit(5);
-        res.status(200).json({product,similar})
+        const similar = await Product.find({ category: product.category }).limit(5);
+        res.status(200).json({ product, similar });
     } catch (e) {
         res.status(400).send(e.message);
     }
-
 });
 
-router.get('/category/:category', async(req,res) =>{
-    const category = req.params;
-    try{
+
+router.get('/category/:category', async (req, res) => {
+    const { category } = req.params;
+    try {
         let products;
-        if(category== "all"){
-            products = await Product.find().sort([['date', -1]])
-        }else{
-            products = await products.find({category})
+        const sort = { '_id': -1 };
+        if (category === "all") {
+            products = await Product.find().sort(sort);
+        } else {
+            products = await Product.find({ category }).sort(sort);
         }
-        res.status(200).json({products})
-    }catch(e){
+        res.status(200).json({ products });
+    } catch (e) {
         res.status(400).send(e.message);
     }
-})
+});
 
 //cart routes
 

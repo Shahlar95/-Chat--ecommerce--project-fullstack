@@ -17,7 +17,7 @@ function CartPage() {
   const user = useSelector((state) => state.user);
   const products = useSelector((state) => state.products);
   const userCartObj = user.cart;
-  let cart = products.filter((product) => userCartObj[product._id] != null);
+  let cart = products.filter((product) => userCartObj[product._id] > 0 );
   const [increaseCart] = useIncreaseCartProductMutation();
   const [decreaseCart] = useDecreaseCartProductMutation();
   const [removeFromCart, {isLoading}] = useRemoveFromCartMutation();
@@ -27,6 +27,8 @@ function CartPage() {
     if (quantity <= 0) return alert("Can't proceed");
     decreaseCart(product);
   }
+
+
   return (
     <Container style={{ minHeight: "95vh" }} className="cart-container">
       <Row>
