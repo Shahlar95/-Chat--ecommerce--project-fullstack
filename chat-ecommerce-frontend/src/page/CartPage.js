@@ -27,7 +27,8 @@ function CartPage() {
     if (quantity <= 0) return alert("Can't proceed");
     decreaseCart(product);
   }
-
+console.log(userCartObj);
+  console.log(cart)
 
   return (
     <Container style={{ minHeight: "95vh" }} className="cart-container">

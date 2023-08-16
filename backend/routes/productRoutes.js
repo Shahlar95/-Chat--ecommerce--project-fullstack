@@ -95,7 +95,7 @@ router.post('/add-to-cart', async(req,res) =>{
             userCart[productId] +=1;
         }
         else{
-            userCart[productId] +=1;
+            userCart[productId] =1;
         }
         userCart.count += 1;
         userCart.total = Number(userCart.total) + Number(price);
