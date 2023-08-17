@@ -29,7 +29,8 @@ function ProductPage() {
     }, [id])
     if(!product){
         return  <Loading/>
-    }
+    };
+
     const images = product.pictures.map((picture) => <img className='product__carousel-image' src={picture.url} onDragStart={handleDragStart}/>) 
 
     let similarProducts = [];
@@ -62,17 +63,19 @@ function ProductPage() {
                 <p style={{textAlign:'justify'}} className='py-3'>
                 <strong>Description:</strong> {product.description}   
                  </p>
-                 {user && !user.Admin && (
-                    <ButtonGroup style={{width:"90%"}}>
-                    <Form.Select size='lg' style = {{width:"40%", borderRadius: "0"}}>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
-                    <option value='3'>3</option>
-                    <option value='4'>4</option>
-                    <option value='5'>5</option>
-                    </Form.Select>
-                    <Button  size='lg' onClick={() => addToCart({userId: user._id, productId: id, price: product.price, image: product.pictures[0].url})}>Add to Card</Button>
-                    </ButtonGroup>
+                   {user && !user.isAdmin && (
+                        <ButtonGroup style={{ width: "90%" }}>
+                            <Form.Select size="lg" style={{ width: "40%", borderRadius: "0" }}>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </Form.Select>
+                            <Button size="lg" onClick={() => addToCart({ userId: user._id, productId: id, price: product.price, image: product.pictures[0].url })}>
+                                Add to cart
+                            </Button>
+                        </ButtonGroup>
                  )}
                  { user && user.isAdmin && (
                     <div style={{margin:'20px'}}>
