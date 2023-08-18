@@ -27,7 +27,7 @@ function CartPage() {
     if (quantity <= 0) return alert("Can't proceed");
     decreaseCart(product);
   }
-  console.log(products);
+
 console.log(user.cart);
   console.log(cart)
 

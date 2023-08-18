@@ -36,9 +36,12 @@ function ProductPage() {
     let similarProducts = [];
      if(similar){
         similarProducts = similar.map((product, idx) => {
-            <div className='item' data-value={idx}>
+
+           return( <div className='item' data-value={idx}>
                 <SimilarProduct {...product}/> 
             </div>
+            )
+
         })
      }
 
