@@ -28,8 +28,6 @@ function CartPage() {
     decreaseCart(product);
   }
 
-console.log(user.cart);
-  console.log(cart)
 
   return (
     <Container style={{ minHeight: "95vh" }} className="cart-container">
