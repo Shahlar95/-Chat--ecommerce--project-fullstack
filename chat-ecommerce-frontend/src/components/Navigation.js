@@ -30,10 +30,10 @@ function Navigation() {
     }
 
     return (
-        <Navbar className='navbar'  expand="lg">
-            <Container>
+        <Navbar bg="primary"  expand="lg">
+            <Container >
                 <LinkContainer to="/">
-                    <Navbar.Brand>Ecomern</Navbar.Brand>
+                    <Navbar.Brand className='nav-brand'>Ecomern</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -41,12 +41,12 @@ function Navigation() {
                         {/* if no user */}
                         {!user && (
                             <LinkContainer to="/login">
-                                <Nav.Link>Login</Nav.Link>
+                                <Nav.Link className='nav-login'>Login</Nav.Link>
                             </LinkContainer>
                         )}
                         {user && !user.isAdmin && (
                             <LinkContainer to="/cart">
-                                <Nav.Link>
+                                <Nav.Link className='nav-shopcart'>
                                     <i className="fas fa-shopping-cart"></i>
                                     {user?.cart.count > 0 && (
                                         <span className="badge badge-warning" id="cartcount">
@@ -60,7 +60,7 @@ function Navigation() {
                         {/* if user */}
                         {user && (
                             <>
-                                <Nav.Link style={{ position: "relative" }} onClick={handleToggleNotifications}>
+                                <Nav.Link style={{ position: "relative" , color:"white"}} onClick={handleToggleNotifications}>
                                     <i className="fas fa-bell" ref={bellRef} data-count={unreadNotifications || null}></i>
                                 </Nav.Link>
                                 <NavDropdown title={`${user.email}`} id="basic-nav-dropdown">
