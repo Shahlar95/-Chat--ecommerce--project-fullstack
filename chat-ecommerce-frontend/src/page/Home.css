@@ -17,6 +17,10 @@
 
 .home-banner{
     width: 95%;
+    height: 90vh;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .card{
@@ -34,6 +38,16 @@ img.card-img-top.product-preview-img {
 
 .sale__banner--container img {
     width: 98%;
+    height:100vh;
     display: block;
     margin:0 auto;
+    
+    
+}
+
+#image2{
+    border-radius: 5px;
+    width: 800px;
+    height:85vh;
+    object-fit: cover;
 }

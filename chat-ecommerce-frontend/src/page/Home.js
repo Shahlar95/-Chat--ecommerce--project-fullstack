@@ -20,36 +20,8 @@ const Home = () => {
 
   return (
     <div>
-      {/* <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: '100vh',
-          paddingTop: '100.0000%',
-          paddingBottom: 0,
-          boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
-          overflow: 'hidden',
-          borderRadius: '8px',
-          willChange: 'transform',
-        }}
-      >
-        <iframe
-          title="Canva Design"
-          loading="lazy"
-          style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100vh',
-            border: 'none',
-           
-          }}
-          src="https://www.canva.com/design/DAFsby-o06w/view?embed"
-          allowFullScreen
-          allow="fullscreen"
-        ></iframe>
-      </div> */}
-      <img
-        src="https://www.canva.com/design/DAFsby-o06w/KY4YWIXmhY_GxVE5X0NwyQ/view?utm_content=DAFsby-o06w&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+       <img
+        src="/image1.png"
         alt="img"
         className="home-banner"
       />
@@ -72,7 +44,7 @@ const Home = () => {
       </div>
       {/* sale banner */}
       <div className="sale__banner--container mt-4">
-        <img src="../../assets/image/image2.png" alt="img" />
+        <img  id='image2' src="/image2.png" alt="img" />
       </div>
       <div className="recent-products-container mt-4">
         <h2>Categories</h2>
@@ -84,6 +56,7 @@ const Home = () => {
                   style={{
                     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${category.img})`,
                     gap: '10px',
+                    marginBottom:"30px"
                   }}
                   className="category-tile"
                 >

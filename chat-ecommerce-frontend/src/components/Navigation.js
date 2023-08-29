@@ -30,10 +30,10 @@ function Navigation() {
     }
 
     return (
-        <Navbar bg="primary"  expand="lg">
+        <Navbar className='navbar' expand="lg">
             <Container >
                 <LinkContainer to="/">
-                    <Navbar.Brand className='nav-brand'>Ecomern</Navbar.Brand>
+                    <Navbar.Brand className='nav-brand'>E-COMMERCE</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

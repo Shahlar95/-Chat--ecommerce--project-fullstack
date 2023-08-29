@@ -80,3 +80,7 @@
     min-width: 2em;
     font:bold 0.4em sans-serif;
 }
+
+.navbar{
+    background-color: rgb(169, 112, 223);
+}
