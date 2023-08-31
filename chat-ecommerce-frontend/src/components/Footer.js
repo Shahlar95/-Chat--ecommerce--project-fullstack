@@ -82,7 +82,7 @@ export default function Footer() {
       </section>
 
       <div  id='footer-text' className='text-center p-4'>
-        © 2023 Copyright
+        © 2023
       </div>
     </MDBFooter>
   );

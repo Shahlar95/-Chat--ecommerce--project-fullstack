@@ -36,8 +36,23 @@ function Navigation() {
                     <Navbar.Brand className='nav-brand'>E-COMMERCE</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <div className='nav-routing'>
+                <LinkContainer to="/products">
+                    <Navbar.Brand className='nav-products'>Products</Navbar.Brand>
+                </LinkContainer>
+                <LinkContainer to="/">
+                    <Navbar.Brand className='nav-blog'>Blog</Navbar.Brand>
+                </LinkContainer>
+                <LinkContainer to="/">
+                    <Navbar.Brand className='nav-blog'>Blog</Navbar.Brand>
+                </LinkContainer>
+                <LinkContainer to="/">
+                    <Navbar.Brand className='nav-about'>About</Navbar.Brand>
+                </LinkContainer>
+                </div>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
+                    
                         {/* if no user */}
                         {!user && (
                             <LinkContainer to="/login">
