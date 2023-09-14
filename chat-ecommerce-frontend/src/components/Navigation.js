@@ -37,11 +37,11 @@ function Navigation() {
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <div className='nav-routing'>
+                    <LinkContainer to="/">
+                    <Navbar.Brand className='nav-blog'>Home</Navbar.Brand>
+                </LinkContainer>
                 <LinkContainer to="/products">
                     <Navbar.Brand className='nav-products'>Products</Navbar.Brand>
-                </LinkContainer>
-                <LinkContainer to="/">
-                    <Navbar.Brand className='nav-blog'>Blog</Navbar.Brand>
                 </LinkContainer>
                 <LinkContainer to="/">
                     <Navbar.Brand className='nav-blog'>Blog</Navbar.Brand>

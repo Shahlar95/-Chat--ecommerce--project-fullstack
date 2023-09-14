@@ -11,11 +11,16 @@ export const userSlice = createSlice({
     initialState,
     reducers:{
         logout:()=> initialState,
-        addNotification: (state, action) =>{
-            state.notifications.unshift(action.payload);
-        },
+        addNotification: (state, action) => {
+            if (state.notifications) {
+              state.notifications.unshift(action.payload);
+            } else {
+              state.notifications = [action.payload];
+            }
+          },
+          
         resetNotifications: (state) =>{
-            state.notifications.forEach(obj => {
+            state.notifications.forEach((obj) => {
                 obj.status = 'read';
             });
         }

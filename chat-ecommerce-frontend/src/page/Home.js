@@ -26,7 +26,7 @@ const Home = () => {
         className="home-banner"
       />
       <div className="featured-products-container mt-4">
-        <h2>Last products</h2>
+        <h2 id='last-porduccts-header'>Last products</h2>
         {/* last products here */}
         <div className="d-flex justify-content-center flex-wrap">
           {lastProducts.map((product) => (
@@ -47,7 +47,7 @@ const Home = () => {
         <img  id='image2' src="/image2.png" alt="img" />
       </div>
       <div className="recent-products-container mt-4">
-        <h2>Categories</h2>
+        <h2 id='home-categori-header'>Categories</h2>
         <Row>
           {categories.map((category) => (
             <LinkContainer key={category.name} to={`/category/${category.name.toLowerCase()}`}>
