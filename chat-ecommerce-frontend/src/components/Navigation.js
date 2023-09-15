@@ -40,7 +40,7 @@ function Navigation() {
                     <LinkContainer to="/">
                     <Navbar.Brand className='nav-blog'>Home</Navbar.Brand>
                 </LinkContainer>
-                <LinkContainer to="/products">
+                <LinkContainer to="/category/all">
                     <Navbar.Brand className='nav-products'>Products</Navbar.Brand>
                 </LinkContainer>
                 <LinkContainer to="/">
