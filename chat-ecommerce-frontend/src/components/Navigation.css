@@ -1,5 +1,12 @@
+
+.navbar{
+    position:sticky;
+    z-index: 1;
+    top: 0;
+}
 .nav-brand{
     color: white !important;
+    
 }
 
 .nav-login,.nav-shopcart,#basic-nav-dropdown{
@@ -17,7 +24,7 @@
 
 #cartcount{
     font-size:10px;
-    background-color:red;
+   
     color:white;
     padding:2px 4px;
     vertical-align:top;
