@@ -28,7 +28,7 @@ const Home = () => {
       <div className="featured-products-container mt-4">
         <h2 id='last-porduccts-header'>Last products</h2>
         {/* last products here */}
-        <div className="d-flex justify-content-center flex-wrap">
+        <div  id='product-text' className="d-flex justify-content-center flex-wrap">
           {lastProducts.map((product) => (
             <ProductPreview key={product.id} {...product} />
           ))}
