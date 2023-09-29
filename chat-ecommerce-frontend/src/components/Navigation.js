@@ -43,11 +43,12 @@ function Navigation() {
                 <LinkContainer to="/category/all">
                     <Navbar.Brand className='nav-products'>Products</Navbar.Brand>
                 </LinkContainer>
-                <LinkContainer to="/">
-                    <Navbar.Brand className='nav-blog'>Blog</Navbar.Brand>
-                </LinkContainer>
-                <LinkContainer to="/">
+                
+                <LinkContainer to="/about">
                     <Navbar.Brand className='nav-about'>About</Navbar.Brand>
+                </LinkContainer>
+                <LinkContainer to="/contact">
+                    <Navbar.Brand className='nav-blog'>Contact</Navbar.Brand>
                 </LinkContainer>
                 </div>
                 <Navbar.Collapse id="basic-navbar-nav">

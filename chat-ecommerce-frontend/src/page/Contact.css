@@ -1,0 +1,30 @@
+
+.container{
+    margin: 0px auto; 
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.container h2{
+    text-align: center;
+}
+.form-contact{
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 500px ;
+    
+}
+
+
+.contact-text{
+    padding: 40px 0 ;
+}
+/* #form-group{
+    position: absolute;
+   
+   
+    
+} */

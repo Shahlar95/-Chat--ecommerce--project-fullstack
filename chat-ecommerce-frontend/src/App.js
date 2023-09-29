@@ -17,7 +17,9 @@ import { addNotification } from './features/userSlice';
 import { useEffect } from 'react';
 import EditProductPage from "./page/EditProductPage";
 import { io } from "socket.io-client";
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import About from './page/About';
+import Contact from './page/Contact';
 
 
 
@@ -69,6 +71,8 @@ function App() {
         )}
         <Route path='/product/:id' element={<ProductPage/>}/>
         <Route path='/category/:category' element={<CategoryPage/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/about' element={<About/>}/>
         
 
 
