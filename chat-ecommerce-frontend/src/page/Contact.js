@@ -6,13 +6,13 @@ import "./Contact.css";
 function Contact() {
   return (
     <div className='container'>
-         
-        <div className='contact-text'>
-        <h2>Contact Us</h2>
-            <p>Adress: New York, NY 10012, US</p>
-            <p>Email:info@example.com</p>
-            <p> + 01 234 567 88</p>
-            <p>+ 01 234 567 89</p>
+      <h2>Contact Us</h2>
+         <div className='container-content'>
+         <div className='contact-text'>
+            <p><i class="fa-solid fa-location-dot"></i> Adress: New York, NY 10012, US</p>
+            <p><i class="fa-solid fa-at"></i> Email:info@example.com</p>
+            <p><i class="fa-solid fa-phone"></i>  + 01 234 567 88</p>
+            <p><i class="fa-solid fa-mobile-screen"></i> + 01 234 567 89</p>
 
         </div>
         <div><Form className='form-contact'>
@@ -34,6 +34,8 @@ function Contact() {
         <Form.Control as="textarea" rows={3} />
       </Form.Group>
     </Form></div>
+         </div>
+       
         
     
     </div>

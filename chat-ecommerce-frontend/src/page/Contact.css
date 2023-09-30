@@ -1,19 +1,26 @@
 
 .container{
     margin: 0px auto; 
-    
+  text-align: center;
+}
+
+.container h2{
+    font-size: 40px;
+    margin: 35px 0;
+    color: rgba(0, 0, 0, 0.747);
+}
+
+.container-content{
     display: flex;
     justify-content: space-between;
 }
 
-.container h2{
-    text-align: center;
-}
+
 .form-contact{
     padding: 40px 0px;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     width: 500px ;
     
 }
@@ -22,9 +29,8 @@
 .contact-text{
     padding: 40px 0 ;
 }
-/* #form-group{
-    position: absolute;
-   
-   
-    
-} */
+
+.contact-text{
+    color: rgba(15, 15, 15, 0.733);
+    font-size: 25px;
+}
