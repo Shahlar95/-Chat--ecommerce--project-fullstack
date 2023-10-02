@@ -33,7 +33,7 @@ function Navigation() {
         <Navbar className='navbar' expand="lg">
             <Container >
                 <LinkContainer to="/">
-                    <Navbar.Brand className='nav-brand'>E-COMMERCE</Navbar.Brand>
+                    <Navbar.Brand className='nav-brand'><span className="logo-comerce">E</span>-COMMERCE</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <div className='nav-routing'>

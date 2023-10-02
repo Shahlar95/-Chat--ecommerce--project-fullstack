@@ -1,0 +1,19 @@
+.container-about{
+    margin: 50px 25px;
+    
+}
+
+.container-about h2{
+    
+    color: rgb(255, 169, 10);
+
+    border-radius: 10px;
+   
+   
+    
+}
+.container-about  p{
+    text-align: left;
+    font-size: 16px;
+    padding: 20px 80px;
+}
