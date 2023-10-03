@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Col, Container, Form, Row, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useLoginMutation } from "../services/appApi";
+import "./Login.css"
 
 
 function Login() {
@@ -13,11 +14,12 @@ function Login() {
         login({ email, password });
     }
     return (
-        <Container>
+        <Container className="login-container">
+            <h2>Join the world of technology</h2>
             <Row>
-                <Col md={6} className="login__form--container">
+                <Col className="login__form--container">
                     <Form style={{ width: "100%" }} onSubmit={handleLogin}>
-                        <h1>Login to your account</h1>
+                        <h2>Login  account</h2>
                         {isError && <Alert variant="danger">{error.data}</Alert>}
                         <Form.Group>
                             <Form.Label>Email Address</Form.Label>
@@ -36,11 +38,11 @@ function Login() {
                         </Form.Group>
 
                         <p className="pt-3 text-center">
-                            Don't have an account? <Link to="/signup">Create account</Link>{" "}
+                            Don't have an account? <Link to="/signup" style={{color:"red"}}>Create account</Link>{" "}
                         </p>
                     </Form>
                 </Col>
-                <Col md={6} className="login__image--container"></Col>
+               
             </Row>
         </Container>
     );
