@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Col, Container, Form, Row, Button, Alert} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import './Signup.css';
 import { useSignupMutation} from '../services/appApi'
+import './Signup.css';
 
 
 const Signup = () => {
@@ -18,10 +18,12 @@ const Signup = () => {
     }
 
   return (
-    <Container>
-    <Row>
-        <Col md={6} className='sign__form--container '>
-            <Form style ={{width: "100%"}} onSubmit= {handleSignup}>
+   
+<Container className='singup-container' >
+   <Row>
+        <Col className='sign__form--container'>
+           
+            <Form style ={{width: "100%" }} onSubmit= {handleSignup}>
                 <h1>Create an  account</h1>
                 {isError && <Alert variant='danger' >{error.data}</Alert>}
                 <Form.Group>
@@ -44,11 +46,12 @@ const Signup = () => {
                 <p>Don't haven an account? <Link to='/login'>Login</Link>{''}
                 </p>
             </Form>
+            
+            
         </Col>
-        <Col md={6} className='signup__image--container'></Col>
-
-    </Row>
+        </Row>
    </Container>
+    
   );
 };
 
