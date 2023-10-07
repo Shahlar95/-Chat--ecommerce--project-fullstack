@@ -39,11 +39,11 @@ const Signup = () => {
                     <Form.Control type='password' placeholder='Enter password' value={password} required onChange={(e)=> setPassword(e.target.value)}/>
                 </Form.Group>
                 <Form.Group>
-                    <Button type='submit' disabled={isLoading}
+                    <Button style ={{margin: "10px"}} type='submit' disabled={isLoading}
                     
                     >Create Account</Button>
                 </Form.Group>
-                <p>Don't haven an account? <Link to='/login'>Login</Link>{''}
+                <p>Don't haven an account? <Link style ={{color: "red" }} to='/login'>Login</Link>{''}
                 </p>
             </Form>
             

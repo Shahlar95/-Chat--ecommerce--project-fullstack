@@ -7,6 +7,10 @@
     
 }
 
+.login-container h2{
+    color: #fff !important;
+}
+
 .login__form--container {
     background-image: url('https://img.freepik.com/free-vector/realistic-style-technology-particle-background_23-2148426704.jpg');
     width: 500px;
@@ -23,10 +27,7 @@
     color: white; 
 }
 
-.login__form--container h2{
-    color: white !important;
-    margin: 20px;
-}
+
 
 
 @media screen and (max-width: 756px) {

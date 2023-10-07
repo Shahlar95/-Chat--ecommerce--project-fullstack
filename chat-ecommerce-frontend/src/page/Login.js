@@ -15,7 +15,6 @@ function Login() {
     }
     return (
         <Container className="login-container">
-            <h2>Join the world of technology</h2>
             <Row>
                 <Col className="login__form--container">
                     <Form style={{ width: "100%" }} onSubmit={handleLogin}>
